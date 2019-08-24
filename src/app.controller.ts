@@ -1,8 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
+import { IsWechat } from './isWechat.guard';
 
 @Controller()
 export class AppController {
-	@Get()
+	@Get('wx')
+	@UseGuards(IsWechat)
 	hello() {
 		return 'hello!!';
 	}
