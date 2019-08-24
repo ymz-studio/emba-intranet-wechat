@@ -3,7 +3,7 @@ import { IsWechat } from './isWechat.guard';
 
 @Controller()
 export class AppController {
-	@Get('wx')
+	@Get('')
 	@UseGuards(IsWechat)
 	hello() {
 		return 'hello!!';
