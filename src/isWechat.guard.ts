@@ -16,7 +16,7 @@ export class IsWechat implements CanActivate {
 		const request = context.switchToHttp().getRequest();
 		const query: Query = request.query;
 		const sha = createHash('sha1')
-			.update([ query.echostr, query.nonce, TOKEN ].sort().join(''))
+			.update([ query.timestamp, query.nonce, TOKEN ].sort().join(''))
 			.digest('hex')
 
 		return sha === query.signature;
