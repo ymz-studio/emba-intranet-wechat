@@ -15,11 +15,9 @@ export class IsWechat implements CanActivate {
 	canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
 		const request = context.switchToHttp().getRequest();
 		const query: Query = request.query;
-
 		const sha = createHash('sha1')
 			.update([ query.echostr, query.nonce, TOKEN ].sort().join(''))
-			.digest()
-			.toString();
+			.digest('hex')
 
 		return sha === query.signature;
 	}
