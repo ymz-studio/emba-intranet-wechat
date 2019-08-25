@@ -22,7 +22,7 @@
 
 以下是获取accessToken的流程：
 
-![zenuml (https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-150510.jpg)](/Users/wsq/Downloads/zenuml (4).jpeg)
+![img](https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-150510.jpg))
 
 有了上述两种机制作为基础，我们就可以顺利的接收微信服务器的消息或者向微信服务器发送消息。
 
@@ -30,18 +30,20 @@
 
 我们要确定userID和openID之间的映射关系。通过生成**带参数的公众号二维码**，在二维码中携带用户的身份令牌，用户扫码关注公众号后，微信服务器会发送一条消息至我们的服务器，携带用户令牌和openID，服务器通过解析令牌即可确立userID和openID的映射关系。
 
-![zenuml (https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-151510.jpg)](/Users/wsq/Downloads/zenuml (5).jpeg)
+![img](https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-151510.jpg)
 
 
 
 ### 扫码登录
 
-获取二维码的过程与扫码绑定类似，主要阐述一下登录的流程。用户在登录页面请求二维码并扫描，微信服务器收到扫码事件后会携带用户openID请求我们的服务器，服务器判断openID是否已经绑定过，如果没有则提示用户无法登录，如果有则设置用户的登录状态并重定向客户端的页面。![zenuml (https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-153647.jpg)](/Users/wsq/Downloads/zenuml (9).jpeg)
+获取二维码的过程与扫码绑定类似，主要阐述一下登录的流程。用户在登录页面请求二维码并扫描，微信服务器收到扫码事件后会携带用户openID请求我们的服务器，服务器判断openID是否已经绑定过，如果没有则提示用户无法登录，如果有则设置用户的登录状态并重定向客户端的页面。!
+
+![img](https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-153647.jpg)
 
 ### 公众号通知
 
 我们平台的通知产生时，可以被发送给微信服务器，通过公众号发送给用户。通过给通知配置链接，还可以让用户在微信内直接打开系统页面。
 
-![zenuml (https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-153556.jpg)](/Users/wsq/Downloads/zenuml (8).jpeg)
+![img](https://ipic-1253962968.cos.ap-beijing.myqcloud.com/2019-08-25-153556.jpg)
 
 
