@@ -19,7 +19,7 @@ export class AppController {
 		const messages = wechatMessage.messages;
 		const reply = wechatMessage.reply;
 
-		function onBundle(payload: BundleEventPayload) {
+		function onBind(payload: BundleEventPayload) {
 			let userID;
 			let replyStr = '';
 
@@ -36,8 +36,8 @@ export class AppController {
 			res.setHeader('content-type', 'text/xml');
 			res.send(reply.text(payload.ToUserName, payload.FromUserName, replyStr));
 		}
-		messages.event.on.scan(onBundle);
-		messages.event.on.subscribe(onBundle);
+		messages.event.on.scan(onBind);
+		messages.event.on.subscribe(onBind);
 		messages.onXML(body);
 	}
 
